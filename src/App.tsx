@@ -1,32 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-function App() {
+import {Button} from "./Components/Button";
 
-    // const myFirstSubscriber = (event:MouseEvent<HTMLButtonElement>) => {
-    //     console.log('Hello Im Vasja!')
-    // }
-    // const mySecondSubscriber = (event:MouseEvent<HTMLButtonElement>) => {
-    //     console.log('Hello Im John!')
-    // }
-    const onClickHadnler = (name: string) => {
-        console.log(name)
+function App() {
+    const Button1Foo = (sub: string, age: number, address: string) => {
+        console.log(sub, age, address)
     }
-    const foo1=()=>{
-        console.log(100200)
+    const Button2Foo = (sub: string, age: number) => {
+        console.log(sub, age)
     }
-    const foo2=(num: number)=>{
-        console.log(num)
+    const Button3Foo = () => {
+        console.log('Im stupid button')
     }
 
     return (
         <div className="App">
-            {/*<button onClick={(event)=>{console.log('Hello first')}}>myFirstButton</button>*/}
-            <button onClick={()=>onClickHadnler('Vasja')}>MyYoutubeChanel-1</button>
-            <button onClick={()=>onClickHadnler('John')}>MyYoutubeChanel-2</button>
-            {/*<button onClick={()=>onClickHadnler("some info")}>MyYoutubeChanel-3</button>*/}
-            <button onClick={foo1}>1</button>
-            <button onClick={()=>foo2(100200)}>2</button>
+            <Button name={'YouTubeChanel-1'} callBack={() => Button1Foo('Im Vasya', 21, 'live in Latvia')}/>
+            <Button name={'YouTubeChanel-2'} callBack={() => Button2Foo('Im Ivan', 30)}/>
+            <Button name={'Stupid Button'} callBack={Button3Foo}/>
         </div>
     )
 }
