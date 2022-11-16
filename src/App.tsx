@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {MouseEvent} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {Button} from "./Components/Button";
 
 function App() {
+
     const Button1Foo = (sub: string, age: number, address: string) => {
         console.log(sub, age, address)
     }
