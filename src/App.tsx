@@ -1,27 +1,31 @@
-import React, {MouseEvent, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {Button} from "./Components/Button";
 
 function App() {
-
-    // let a = 1
-    let [a, setA] = useState(0)
-
-    const onClickHandler = () => {
-        setA(++a)
-        console.log(a)
-    }
-    const onClickHandler2=()=>{
-        setA(a=0)
-    }
+    const [money, setMoney] = useState([
+        { banknots: 'Dollars', value: 100, number: ' a1234567890' },
+        { banknots: 'Dollars', value: 50, number: ' z1234567890' },
+        { banknots: 'RUBLS', value: 100, number: ' w1234567890' },
+        { banknots: 'Dollars', value: 100, number: ' e1234567890' },
+        { banknots: 'Dollars', value: 50, number: ' c1234567890' },
+        { banknots: 'RUBLS', value: 100, number: ' r1234567890' },
+        { banknots: 'Dollars', value: 50, number: ' x1234567890' },
+        { banknots: 'RUBLS', value: 50, number: ' v1234567890' },
+    ])
 
     return (
-        <div className="App">
-            <h1>{a}</h1>
-            <button onClick={onClickHandler}>++number</button>
-            <button onClick={onClickHandler2}>0</button>
-        </div>
+        <ul>
+            {money.map((objFromMoneyArr)=>{
+                return(
+                    <li>
+                        <span>{objFromMoneyArr.banknots}</span>
+                        <span>{objFromMoneyArr.value}</span>
+                        <span>{objFromMoneyArr.number}</span>
+                    </li>
+                )
+            })}
+        </ul>
     )
 }
 
-export default App;
+export default App
